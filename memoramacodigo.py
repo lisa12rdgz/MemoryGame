@@ -27,7 +27,8 @@ def xy(count):
     "Convert tiles count to (x, y) coordinates."
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
-contador = 0
+#Contadoress
+contador = 0 
 contador2=0
 
 def tap(x, y):
@@ -43,12 +44,12 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
-        contador2+= 1
+        contador2+= 1 #Contador de parejas encontradas
     
-    contador = contador+1
+    contador = contador+1 # Contador de taps
     print('Tap:', contador)
 
-    if contador2==32:
+    if contador2==32: #Contador que determina cuando se encontraron todas las parejas // juego terminado
         print('JUEGO TERMINADO')
 
 def draw():
