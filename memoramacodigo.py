@@ -3,9 +3,17 @@ from turtle import *
 from freegames import path
 
 car = path('car.gif')
-tiles = list(range(32)) * 2
+#tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+tiles = ["\U0001f947","\U0001f384","\U0001f250","\u264e",
+"\U0001f936","\U0001f197","\U0001f17e\ufe0f","\U0001f17f\ufe0f",
+"\U0001f17f\ufe0f","\U0001f198","\U0001f385","\U0001f3f4\U000e0067\U000e0062\U000e0073\U000e0063\U000e0074\U000e007f",
+"\U0001f5fd","\U0001f996","\U0001f5fc","\U0001f199",
+"\U0001f19a","\u264d","\U0001f9ee","\U0001fa79",
+"\U0001f39f\ufe0f","\U0001f39f","\U0001f6a1","\u2708\ufe0f",
+"\u23f0","\u2697\ufe0f","\U0001f47d","\U0001f47e",
+"\U0001f691","\U0001f3c8","\U0001f3fa","\U0001f69b"] * 2
 
 def square(x, y):
     "Draw white square with black outline at (x, y)."
@@ -69,9 +77,9 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        goto(x + 26, y)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark], font=('Arial', 30, 'normal'),align=("center"))
 
     update()
     ontimer(draw, 100)
